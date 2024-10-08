@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { React, useEffect } from "react";
+import { Header } from "./header/Header";
+import { Routes, Route, useLocation } from "react-router-dom";
+import NotCreatedPage from "./pages/NotCreatedPage";
+import HomePage from "./pages/HomePage";
 
-function App() {
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+};
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <body className="flex flex-col min-h-screen">
+      <Header />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/page1" element={<NotCreatedPage />} />
+        <Route path="/page2" element={<NotCreatedPage />} />
+        <Route path="/page3" element={<NotCreatedPage />} />
+        <Route path="/page4" element={<NotCreatedPage />} />
+      </Routes>
+    </body>
   );
 }
-
-export default App;

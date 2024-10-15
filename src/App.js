@@ -3,6 +3,7 @@ import { Header } from "./header/Header";
 import { Routes, Route, useLocation } from "react-router-dom";
 import NotCreatedPage from "./pages/NotCreatedPage";
 import HomePage from "./pages/HomePage";
+import AboutMe from "./pages/AboutMePage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -19,7 +20,7 @@ export default function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/page1" element={<NotCreatedPage />} />
+        <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/page2" element={<NotCreatedPage />} />
         <Route path="/page3" element={<NotCreatedPage />} />
         <Route path="/page4" element={<NotCreatedPage />} />

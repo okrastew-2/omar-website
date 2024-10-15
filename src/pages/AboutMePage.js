@@ -17,13 +17,6 @@ const AboutMe = () => {
         <li>item</li>
         <li>item</li>
       </ul> */}
-      {/* <div className="bg-blue-500">
-        <h1>Hobbies and interests</h1>
-        <ul>
-          <li>First thing</li>
-          <li>second</li>
-        </ul>
-      </div> */}
     </div>
   );
 };
